@@ -27,13 +27,13 @@ public class TarifaServicesImpl implements TarifaServices {
 	// GET
 	@Override
 	public List<Tarifa> findAll() {
-		log.info("<---- Listando el catalogo ---->");
+		log.info("<---- Listando las tarifas ---->");
 		return tarifaRepository.findAll();
 	}
 
 	@Override
 	public Optional<Tarifa> findById(Long id) {
-		log.info("<---- Comprobando si el producto con id {} existe ---->", id);
+		log.info("<---- Comprobando si la tarifa con id {} existe ---->", id);
 		return Optional.ofNullable(tarifaRepository.findById(id)
 				.orElseThrow(() -> new NotFoundException("Tarifa no encontrada con id " + id)));
 	}

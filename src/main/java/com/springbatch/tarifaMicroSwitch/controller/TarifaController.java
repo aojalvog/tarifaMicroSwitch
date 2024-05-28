@@ -45,7 +45,7 @@ public class TarifaController {
 		return ResponseEntity.ok(listTarifa);
 	}
 
-	@GetMapping("/list/producto/{id}")
+	@GetMapping("/list/tarifa/{id}")
 	public Optional<Tarifa> getProducto(@PathVariable Long id) throws NotFoundException {
 		log.info("<---- Mostrando la tarifa con id {} ---->", id);
 		return Optional.of(tarifaServices.findById(id).orElseThrow(NotFoundException::new));
